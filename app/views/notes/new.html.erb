@@ -1,0 +1,7 @@
+<h2>Input</h2>
+
+<%= form_for @note, html: { multipart: true } do |f| %>
+  <%= file_field_tag 'note_file' %>
+  <%= f.submit %>
+<% end %>
+ 

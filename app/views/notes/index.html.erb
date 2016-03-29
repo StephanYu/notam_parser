@@ -1,0 +1,32 @@
+<h2>Results</h2>
+
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>ICAO</th>
+         <th>Mon</th>
+         <th>Tue</th>
+         <th>Wed</th>
+         <th>Thu</th>
+         <th>Fri</th>
+         <th>Sat</th>
+         <th>Sun</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @notes.each do |note| %>
+         <tr>
+            <td><%= note.icao_code %></td>
+            <td><%= note.mon %></td>
+            <td><%= note.tue %></td>
+            <td><%= note.wed %></td>
+            <td><%= note.thu %></td>
+            <td><%= note.fri %></td>
+            <td><%= note.sat %></td>
+            <td><%= note.sun %></td>
+         </tr> 
+      <% end %>
+   </tbody>
+   
+</table>
