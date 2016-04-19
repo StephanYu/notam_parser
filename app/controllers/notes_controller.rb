@@ -10,10 +10,9 @@ class NotesController < ApplicationController
   def create
     if Note.create_multiple_from(params[:note_file])
       redirect_to notes_path, success: 'Uploaded correctly'
-    else 
+    else
       flash[:error] = 'There was an error uploading and parsing the file'
       render :new
     end
   end
-end 
-
+end
