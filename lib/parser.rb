@@ -6,16 +6,6 @@ class Parser
     @file = file
   end
 
-  # TO-DO: Extract logig from #parse method into separate methods (i.e. filter_notams_by(string), create_notam_subarrays, parse_weekdays_and_icao))
-  # def filter_notams_by(string)
-  #   arr = []
-  #   note_from_file.map do |note|
-  #     arr << note if note.include?(string)
-  #   end
-  #
-  #   arr
-  # end
-
   def parse
     arr = []
 

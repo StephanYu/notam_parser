@@ -4,8 +4,8 @@ describe Note do
   describe '#create_multiple_from' do
     context 'successful in creating multiples' do
       it 'saves new notes to the db' do
-        #create notam array with two elements and count size
-        #count Note.all.size
+        #create file with two paragraphs and count size
+        #count Note.all.size = 0
         #create_multiple_from
         #expect(Note.all.size).to eq 2
       end

@@ -28,7 +28,7 @@ describe NotesController do
 
   describe 'POST create' do
     context 'successful note input' do
-      before { post :create, note: Fabricate.attributes_for(:note)}
+      before { post :create, note: {} }
 
       xit 'creates a note' do
         expect(Note.count).to eq(1)
@@ -40,7 +40,7 @@ describe NotesController do
     end
 
     context 'unsuccessful note input' do
-      before { post :create, note: { password: "password", full_name: "Stephan Yu" }}
+      before { post :create, note: {} }
 
       xit 'does not create a note' do
         expect(Note.count).to eq(0)
