@@ -4,7 +4,8 @@ class Note < ActiveRecord::Base
   def self.create_multiple_from(file)
     binding.pry
     notams = Parser.new(file).parse
-    # [["ESGJ", ["SAT 0630-0730 1900-2100", "MON-WED 0500-1830", "THU 0500-2130", "FRI 0730-2100", "SUN CLOSED"]],
+    # notams =
+    #  [["ESGJ", ["SAT 0630-0730 1900-2100", "MON-WED 0500-1830", "THU 0500-2130", "FRI 0730-2100", "SUN CLOSED"]],
     #  ["ESGJ", ["SAT0630-0730 1900-2100", "TUE-THU 0500-2100", "MON 0500-2000", "FRI 0545-2100", "SUN 1215-2000"]],
     #  ["ESNN", ["WED-THU 0500-2300", "MON 0445-2115", "TUE 0500-2130", "FRI 0500-2115", "SAT 0715-1300", "SUN 1115-2145"]],
     #  ["ESNN", ["WED-THU 0500-2300", "MON 0500-2215", "TUE 0500-2130", "FRI 0500-2015", "SAT 1100-1300", "SUN 1115-2300"]],
@@ -22,6 +23,7 @@ class Note < ActiveRecord::Base
   end
 
   def parse_and_assign_days(notam_array)
+    # ["ESGJ", ["SAT 0630-0730 1900-2100", "MON-WED 0500-1830", "THU 0500-2130", "FRI 0730-2100", "SUN CLOSED"]]
     daytime_arr = notam_array[1]
     icao_code   = notam_array[0]
 
