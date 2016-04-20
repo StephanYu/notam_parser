@@ -28,8 +28,8 @@ describe NotesController do
 
   describe 'POST create' do
     context 'successful note input' do
-      before { post :create, note: {} }
-
+      before { post :create, # mock a note_file somehow params[:note_file] }
+      # expect 200 status
       xit 'creates a note' do
         expect(Note.count).to eq(1)
       end
@@ -40,10 +40,11 @@ describe NotesController do
     end
 
     context 'unsuccessful note input' do
-      before { post :create, note: {} }
+      before { post :create, # pass empty note_file }
 
       xit 'does not create a note' do
-        expect(Note.count).to eq(0)
+        # expect flash error message
+        # status code
       end
 
       xit 'renders the :new template' do

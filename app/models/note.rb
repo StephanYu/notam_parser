@@ -11,7 +11,8 @@ class Note < ActiveRecord::Base
       new_note.save
     end.all?
   end
-
+  # def get_icao_code
+  # line 18 and 47
   def parse_and_assign_days(notam_array)
 
     daytime_arr = notam_array[1]
