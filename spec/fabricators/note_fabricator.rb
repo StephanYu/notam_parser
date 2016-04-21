@@ -1,3 +1,0 @@
-Fabricator(:note) do
-  
-end

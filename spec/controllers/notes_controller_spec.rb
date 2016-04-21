@@ -28,10 +28,13 @@ describe NotesController do
 
   describe 'POST create' do
     context 'successful note input' do
-      before { post :create, # mock a note_file somehow params[:note_file] }
-      # expect 200 status
-      xit 'creates a note' do
-        expect(Note.count).to eq(1)
+      before do
+        @file = File.open("valid_only.txt") # mock params["note_file"] for text file
+        post :create,  { note_file: @file }
+      end
+
+      xit 'returns a 200 OK status' do
+        expect(response).to have_http_status(:ok)
       end
 
       xit 'redirects the user to the note index page' do
@@ -40,11 +43,10 @@ describe NotesController do
     end
 
     context 'unsuccessful note input' do
-      before { post :create, # pass empty note_file }
+      before { post :create,  { note_file:  "" } }
 
-      xit 'does not create a note' do
-        # expect flash error message
-        # status code
+      xit 'returns a type of error status code' do
+        expect(response).to have_http_status(:error)
       end
 
       xit 'renders the :new template' do

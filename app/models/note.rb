@@ -11,12 +11,15 @@ class Note < ActiveRecord::Base
       new_note.save
     end.all?
   end
-  # def get_icao_code
-  # line 18 and 47
+
+  def get_icao_code(notam_array)
+    self.icao_code = notam_array[0]
+  end
+
   def parse_and_assign_days(notam_array)
 
+    get_icao_code(notam_array)
     daytime_arr = notam_array[1]
-    icao_code   = notam_array[0]
 
     daytime_arr.each do |item|
       if item.include?('CLOSED') || item.include?('CLSD') #if item is of the type 'SUN CLOSED' or 'SUN CLSD'
@@ -44,7 +47,6 @@ class Note < ActiveRecord::Base
       end
     end
 
-    self.icao_code = icao_code
   end
 
   def write_day_notam(attribute_name, value)

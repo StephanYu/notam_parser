@@ -16,6 +16,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'spring'
   gem 'rspec-rails'
-  gem 'fabrication'
-  gem 'faker'
+  # gem 'fabrication'
+  # gem 'faker'
 end
